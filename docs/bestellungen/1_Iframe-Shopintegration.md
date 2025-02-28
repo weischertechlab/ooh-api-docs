@@ -8,7 +8,7 @@ Das nachfolgende Schaubild stellt Beispielhaft den Bestellprozess dar.
 sequenceDiagram
     actor Benutzer
     
-    Benutzer->>Dein System: Einkauf von Werbeflächen
+    Benutzer->>Dein System: Login
     Dein System->>Unser Shop: Einbindung via HTML iframe
     Benutzer->>Unser Shop: Auswahl von Werbeflächen und abschließen einer Bestellung
     Unser Shop->>Dein System: Callback Neue Bestellung
@@ -29,12 +29,13 @@ Eines der wichtigsten Datenfelder des Händlers ist ```haendlerIdClient```. Dies
 Um die Händler in unserem System anzulegen, kannst du folgende APIs verwenden:
 
 [Händler anlegen]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=ops-shop-api-v0))
+
 [Händler ändern]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=65e6ce5ae271b43a7fb63a5d))
 
 
 ## Shop Login
 
-Damit du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst du eine URL zurück den du in einen HTML iframe auf deiner Website integrieren kannst.
+Damit du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst du eine URL zurück, welche du in einen HTML iframe auf deiner Website integrieren kannst.
 
 ## Shop Login
 
@@ -84,12 +85,19 @@ Payload Body
 }
 ```
 
-Unser System erwartet als Antwort einen gültigen OAUTH Bearer Token.
+Unser System erwartet als Antwort einen gültigen OAUTH Bearer Token:
+
+```
+{
+    "access_token": "{token}",
+}
+```
+
 Dieser Token wird für alle Callbacks verwendet.
 
 ### Callback für Bestellungen
 
-Abgeschlossene Bestellungen können an dein System zurück übermittelt werden. Dazu muss dein System folgenden Callback von unserem System entgegennehmen können:
+Abgeschlossene Bestellungen können an dein System zurück übermittelt werden. Dazu muss dein System folgenden Callback von unserem System entgegen nehmen können:
 
 ``` mermaid
 sequenceDiagram
@@ -124,7 +132,7 @@ Dein System erhält die Bestellung in folgendem Format:
 ]
 ```
 
-Solltest du weitere Daten zu den einzelnen Buchungen benötigen, kannst du unsere [Stammdaten-API]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr)) verwenden.
+Solltest du weitere Daten zu den einzelnen Buchungen benötigen, kannst du unsere [Stammdaten-API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr) verwenden. Nutze dazu die Rückgabewerte ```anbieterNr```, ```standortNr``` und ```flNr``` um die uid zu bilden.
 
 ### Callback für Statusänderungen
 
