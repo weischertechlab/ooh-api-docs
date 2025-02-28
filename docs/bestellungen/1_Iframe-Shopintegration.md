@@ -28,9 +28,9 @@ Eines der wichtigsten Datenfelder des Händlers ist ```haendlerIdClient```. Dies
 
 Um die Händler in unserem System anzulegen, kannst du folgende APIs verwenden:
 
-[Händler anlegen]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=ops-shop-api-v0))
+[Händler anlegen](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=ops-shop-api-v0)
 
-[Händler ändern]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=65e6ce5ae271b43a7fb63a5d))
+[Händler ändern](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=65e6ce5ae271b43a7fb63a5d)
 
 
 ## Shop Login
