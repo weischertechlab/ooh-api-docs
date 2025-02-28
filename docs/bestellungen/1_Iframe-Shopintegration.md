@@ -58,7 +58,7 @@ Die zurückgegebene URL kann für einen HTML iframe verwendet werden.
 
 ## Motive
 
-Unsere Shop-Oberfläche kann so konfiguriert werden, das deine Benutzer direkt die Motive auswählen können die du uns zuvor bereitgestellt hast. Alternativ kannst du uns die Motive auch zu einem späterem Zeitpunkt via [Motiv API]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&operation=patch-bestellung)) übermitteln.
+Unsere Shop-Oberfläche kann so konfiguriert werden, das deine Benutzer direkt die Motive auswählen können die du uns zuvor bereitgestellt hast. Alternativ kannst du uns die Motive auch zu einem späterem Zeitpunkt via [Motiv API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&operation=patch-bestellung) übermitteln.
 
 :warning: Bitte sprich im Projekt mit uns über Fristen, die  gegenüber Anbietern und Klebern eingehalten werden müssen.
 
