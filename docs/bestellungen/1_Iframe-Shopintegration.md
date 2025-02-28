@@ -2,7 +2,7 @@ title: Iframe Shopintegration
 
 Bei der IFrame Shopintegration hast du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.
 
-Das nachfolgende Schaubild stellt Beispielhaft den Bestellprozess dar.
+Das nachfolgende Schaubild stellt beispielhaft den Bestellprozess dar.
 
 ``` mermaid
 sequenceDiagram
