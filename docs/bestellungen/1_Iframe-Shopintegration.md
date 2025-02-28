@@ -37,8 +37,6 @@ Um die Händler in unserem System anzulegen, kannst du folgende APIs verwenden:
 
 Damit du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst du eine URL zurück, welche du in einen HTML iframe auf deiner Website integrieren kannst.
 
-## Shop Login
-
 ``` mermaid
 sequenceDiagram
     Client->>API: POST /shoplogin/
