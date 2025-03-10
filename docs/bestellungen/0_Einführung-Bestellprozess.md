@@ -13,3 +13,8 @@ Du integrierst einen fertigen Webshop via HTML Iframe. Zum Abschluss der Bestell
 ## API Only Integration
 
 Du hast eine eigene Shopüberfläche und übergibst Bestellungen via API Aufruf.
+
+
+## Asynchrone Messagebus Integration
+
+Du hast eine eigene Shopüberfläche und übergibst Bestellungen via Messagebus.
