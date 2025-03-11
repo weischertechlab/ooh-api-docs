@@ -1,4 +1,4 @@
-title: API only Integration
+title: Asynchrone Messagebus Integration
 
 # Asynchrone Messagebus Integration
 
