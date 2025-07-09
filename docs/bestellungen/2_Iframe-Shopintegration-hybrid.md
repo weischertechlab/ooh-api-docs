@@ -1,4 +1,4 @@
-title: Iframe Shopintegration
+title: Iframe Shopintegration Hybrid
 
 Bei der IFrame Shopintegration hast du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.
 
@@ -7,12 +7,14 @@ Das nachfolgende Schaubild stellt beispielhaft den Bestellprozess dar.
 ``` mermaid
 sequenceDiagram
     actor Benutzer
-    
+
     Benutzer->>Dein System: Login
     Dein System->>Unser Shop: Einbindung via HTML iframe
     Benutzer->>Unser Shop: Auswahl von Werbeflächen und abschließen einer Bestellung
-    Unser Shop->>Dein System: Callback Neue Bestellung
-    Unser Shop->>Anbieter: Einkauf der Flächen
+    Unser Shop->>Dein System: Nach Abschluss Umleitung des Benutzers auf dein System
+    Dein System->>Warenkorb API: Abruf des Warenkorbs, individuelle Integration in deinem System
+    Benutzer->>Dein System: Abschluss der Bestellung auf deiner Website
+    Dein System->>Bestell API: Übermittlung der Bestellung
     Anbieter->>Unser Shop: Bestellbestätigung
     Unser Shop->>Dein System: Callback Statusänderung Bestellposition
     Benutzer->>Dein System: Motivzuweisung
@@ -22,15 +24,7 @@ sequenceDiagram
 
 ## Händler anlegen
 
-Um die Shop-Oberfläche nutzen zu können, ist es erforderlich das die Händler mit den nötigen Händlerdaten bei uns im System hinterlegt sind. Das kann im Vorfeld von uns durch einen Datenimport erfolgen oder über unsere Händler API. Mit 'Händler' sind alle Benutzer oder Filialen / Endkunden gemeint, die über deine Website unsere Shop-Oberfläche nutzen wollen.
-
-Eines der wichtigsten Datenfelder des Händlers ist ```haendlerIdClient```. Dieses Feld ist eine eindeutige Nummer oder ein technischer Schlüssel, welcher den Benutzer / Endkunden in deinem System eindeutig identifiziert.
-
-Um die Händler in unserem System anzulegen, kannst du folgende APIs verwenden:
-
-[Händler anlegen](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=ops-shop-api-v0)
-
-[Händler ändern](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=65e6ce5ae271b43a7fb63a5d)
+Siehe [Iframe Shopintegration, Händler anlegen](1_Iframe-Shopintegration.md#handler-anlegen)
 
 
 ## Shop Login
@@ -52,7 +46,9 @@ Die zurückgegebene URL kann für einen HTML iframe verwendet werden.
 - Der Benutzer wählt über die Shop-Oberfläche freie Flächen und Termine
 - Innerhalb der Shop-Oberfläche bestätigt der Benutzer seinen Warenkorb
 - Durch die Bestätigung des Warenkorbs wird eine Bestellung ausgelöst und der Warenkorb geleert für die nächste Bestellung
-- Der Benutzer bleibt in der Shop-Oberfläche, sofern er diese nicht selbstständig verlässt
+- Nach Abschluss der Bestellung wird der Benutzer auf deine Website zurückgeleitet
+- Der Benutzer schließt auf deiner Website die Bestellung ab
+- Dein System übermittelt uns via API die abgeschlossene Bestellung
 
 ![Checkout done](checkout-done.png)
 
