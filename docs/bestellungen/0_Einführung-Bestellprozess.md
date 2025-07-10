@@ -22,4 +22,6 @@ Du benötigst mehr Kontrolle über den Bestellprozess und möchtest zeitgleich e
 
 Du hast bereits einen eigenen Shop und möchtest diesen für die Außenwerbung erweitern? Dann ist unsere API Only Anbindung genau das richtige für dich. Über unsere [Stammdaten API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-stellenart-stellenart) integrierst du die Medien in dein System. Abgeschlossene Bestellungen in deinem Shop übergibst du uns anschließend an unsere [Bestellungen API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api-v2&operation=get-api-v2-tenant-callback-bestellungen-bestellnummer).
 
+Alternativ zu unseren REST Schnittstellen ist auch eine Anbindung via Messagebus möglich. Sprich uns gerne darauf an.
+
 [Weiter zu den Details](3_API-only-integration.md)

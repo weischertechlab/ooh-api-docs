@@ -8,10 +8,3 @@ Auf dieser Seite findest du weiterführende Dokumentation und Prozessbeschreibun
 
 Du bist auf der Suche nach unserer Schnittstellen-Beschreibung? Dann schaue am besten auf unserer 
 [API Gateway](Api-Gateway.md) Infoseite vorbei.
-
-todo:
-- Motive Format Key
-- Wie muss das Druckformat aussehen, public endpoint und pdf
-- Callbacks bis zu einer minute
-- Prozessbeschreibung iframe, warenkorb ergänzen
-- Prozessbeschreibung api only

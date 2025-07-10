@@ -2,6 +2,7 @@ site_name: Weischer.TechLab API Documentation
 situs_url: https://weischer.techlab.de
 theme:
   name: material
+  logo: assets/weischer_logo_white.svg
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
