@@ -5,7 +5,7 @@ title: API only Integration
 ## Abschicken einer Bestellung
 
 - Neben den Bestelldaten muss verpflichtend der Tenant angegeben werden. Dies ist die von uns eindeutig vergebene Bezeichnung des Clients. Anhand dieser wird entschieden, an wen Status Rückmeldungen der Bestellung gesendet werden.
-- Damit unser System die Callbacks an dein System zurücksenden kann, muss das Feld 'metaData' mit dem einem Wert 'baseUrl' befüllt werden. 
+- Damit unser System die Callbacks an dein System zurücksenden kann, muss das Feld 'metaData' mit dem Wert 'baseUrl' befüllt werden. 
  Beispiel metaData für Request [Neue Bestellung anlegen]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api-v2&operation=post-api-v2-bestellung)):
 
 ```
