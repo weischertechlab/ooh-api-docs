@@ -45,10 +45,11 @@ Die zurückgegebene URL kann für einen HTML iframe verwendet werden.
 
 - Der Benutzer wählt über die Shop-Oberfläche freie Flächen und Termine
 - Innerhalb der Shop-Oberfläche bestätigt der Benutzer seinen Warenkorb
-- Durch die Bestätigung des Warenkorbs wird eine Bestellung ausgelöst und der Warenkorb geleert für die nächste Bestellung
-- Nach Abschluss der Bestellung wird der Benutzer auf deine Website zurückgeleitet
+- Durch die Bestätigung wird der Benutzer umgeleitet auf dein System
+- Über unsere [Warenkorb API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=ruft-offene-warenk-rbe-aus-dem-shop-ab) kann dein System sich den Warenkorb aus unserem System abholen für die weitere Verarbeitung
+- Der Benutzer durchläuft in deinem System deinen individuellen Bestellprozess
 - Der Benutzer schließt auf deiner Website die Bestellung ab
-- Dein System übermittelt uns via API die abgeschlossene Bestellung
+- Dein System übermittelt uns via [Bestellungen API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api-v2&operation=get-api-v2-tenant-callback-bestellungen-bestellnummer) die abgeschlossene Bestellung und ggf. Motive
 
 ![Checkout done](checkout-done.png)
 
