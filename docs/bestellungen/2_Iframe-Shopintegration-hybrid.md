@@ -1,6 +1,6 @@
 title: Iframe Shopintegration Hybrid
 
-Bei der IFrame Shopintegration hast du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.
+Bei der IFrame Shopintegration hast Du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.
 
 Das nachfolgende Schaubild stellt beispielhaft den Bestellprozess dar.
 
@@ -29,7 +29,7 @@ Siehe [Iframe Shopintegration, Händler anlegen](1_Iframe-Shopintegration.md#han
 
 ## Shop Login
 
-Damit du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst du eine URL zurück, welche du in einen HTML iframe auf deiner Website integrieren kannst.
+Damit Du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst Du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst Du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst Du eine URL zurück, welche Du in einen HTML iframe auf deiner Website integrieren kannst.
 
 ``` mermaid
 sequenceDiagram
@@ -55,7 +55,7 @@ Die zurückgegebene URL kann für einen HTML iframe verwendet werden.
 
 ## Motive
 
-Nachdem der Benutzer die Bestellung abgeschlossen und dein System die Daten via Warenkorb API abgeholt hast, kannst du uns zu einem späteren Zeitpunkt die Motive via [Motiv API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&operation=patch-bestellung) übermitteln.
+Nachdem der Benutzer die Bestellung abgeschlossen und dein System die Daten via Warenkorb API abgeholt hast, kannst Du uns zu einem späteren Zeitpunkt die Motive via [Motiv API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&operation=patch-bestellung) übermitteln.
 
 :warning: Bitte sprich im Projekt mit uns über Fristen, die  gegenüber Anbietern und Klebern eingehalten werden müssen.
 
@@ -127,7 +127,7 @@ Dein System erhält die Bestellung in folgendem Format:
 ]
 ```
 
-Solltest du weitere Daten zu den einzelnen Buchungen benötigen, kannst du unsere [Stammdaten-API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr) verwenden. Nutze dazu die Rückgabewerte ```anbieterNr```, ```standortNr``` und ```flNr``` um die uid zu bilden.
+Solltest Du weitere Daten zu den einzelnen Buchungen benötigen, kannst Du unsere [Stammdaten-API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr) verwenden. Nutze dazu die Rückgabewerte ```anbieterNr```, ```standortNr``` und ```flNr``` um die uid zu bilden.
 
 ### Callback für Statusänderungen
 

@@ -1,6 +1,6 @@
 title: Iframe Shopintegration
 
-Bei der IFrame Shopintegration hast du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.
+Bei der IFrame Shopintegration hast Du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.
 
 Das nachfolgende Schaubild stellt beispielhaft den Bestellprozess dar.
 
@@ -26,7 +26,7 @@ Um die Shop-Oberfläche nutzen zu können, ist es erforderlich das die Händler 
 
 Eines der wichtigsten Datenfelder des Händlers ist ```haendlerIdClient```. Dieses Feld ist eine eindeutige Nummer oder ein technischer Schlüssel, welcher den Benutzer / Endkunden in deinem System eindeutig identifiziert.
 
-Um die Händler in unserem System anzulegen, kannst du folgende APIs verwenden:
+Um die Händler in unserem System anzulegen, kannst Du folgende APIs verwenden:
 
 [Händler anlegen](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&operation=ops-shop-api-v0)
 
@@ -35,7 +35,7 @@ Um die Händler in unserem System anzulegen, kannst du folgende APIs verwenden:
 
 ## Shop Login
 
-Damit du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst du eine URL zurück, welche du in einen HTML iframe auf deiner Website integrieren kannst.
+Damit Du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst Du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst Du die /shoplogin API verwenden und eine ```haendlerIdClient``` übergeben. Sofern der Aufruf erfolgreich ist, erhältst Du eine URL zurück, welche Du in einen HTML iframe auf deiner Website integrieren kannst.
 
 ``` mermaid
 sequenceDiagram
@@ -58,7 +58,7 @@ Die zurückgegebene URL kann für einen HTML iframe verwendet werden.
 
 ## Motive
 
-Unsere Shop-Oberfläche kann so konfiguriert werden, das deine Benutzer direkt die Motive auswählen können die du uns zuvor bereitgestellt hast. Alternativ kannst du uns die Motive auch zu einem späterem Zeitpunkt via [Motiv API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&operation=patch-bestellung) übermitteln.
+Unsere Shop-Oberfläche kann so konfiguriert werden, das deine Benutzer direkt die Motive auswählen können die Du uns zuvor bereitgestellt hast. Alternativ kannst Du uns die Motive auch zu einem späterem Zeitpunkt via [Motiv API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&operation=patch-bestellung) übermitteln.
 
 :warning: Bitte sprich im Projekt mit uns über Fristen, die  gegenüber Anbietern und Klebern eingehalten werden müssen.
 
@@ -130,7 +130,7 @@ Dein System erhält die Bestellung in folgendem Format:
 ]
 ```
 
-Solltest du weitere Daten zu den einzelnen Buchungen benötigen, kannst du unsere [Stammdaten-API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr) verwenden. Nutze dazu die Rückgabewerte ```anbieterNr```, ```standortNr``` und ```flNr``` um die uid zu bilden.
+Solltest Du weitere Daten zu den einzelnen Buchungen benötigen, kannst Du unsere [Stammdaten-API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr) verwenden. Nutze dazu die Rückgabewerte ```anbieterNr```, ```standortNr``` und ```flNr``` um die uid zu bilden.
 
 ### Callback für Statusänderungen
 
