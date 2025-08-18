@@ -63,6 +63,15 @@ Nachdem der Benutzer die Bestellung abgeschlossen und dein System die Daten via 
 
 Für bestimmte Ereignisse kann dein System von uns informiert werden. Dazu ist es erforderlich, das dein System einige REST API Endpunkte zur Verfügung stellt. Diese werden dann von unserem System aufgerufen, sobald das Ereignis eintritt. Ganz typische Ereignisse sind zum Beispiel Callbacks für neue getätigte Bestellungen oder geänderte Status an Bestellpositionen.
 
+Damit unser System die Callbacks an dein System zurücksenden kann, muss das Feld 'metaData' mit dem Wert 'baseUrl' befüllt werden wenn die Bestellung übermittelt wird. Beispiel metaData für Request [Neue Bestellung anlegen]([https://](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api-v2&operation=post-api-v2-bestellung)):
+
+```
+"metaData": {
+    "environment": "dev",
+    "baseUrl:" : "https://deine-callback-url.de"
+}
+```
+
 ### Authentifizierung an deinem System
 
 Um die Callbacks abzusichern unterstützen wir OAUTH. Bevor ein Callback ausgelöst wird, holt sich unser System von deinem System einen gültigen Token. Dazu muss dein System einen entsprechenden Endpunkt bereitstellen:
