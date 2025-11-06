@@ -1,0 +1,828 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../0_Einf%C3%BChrung-Bestellprozess/">
+      
+      
+        <link rel="next" href="../2_Iframe-Shopintegration-hybrid/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Iframe Shopintegration - Weischer.TechLab API Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#handler-anlegen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Weischer.TechLab API Documentation" class="md-header__button md-logo" aria-label="Weischer.TechLab API Documentation" data-md-component="logo">
+      
+  <img src="../../assets/weischer_logo_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Weischer.TechLab API Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Iframe Shopintegration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Weischer.TechLab API Documentation" class="md-nav__button md-logo" aria-label="Weischer.TechLab API Documentation" data-md-component="logo">
+      
+  <img src="../../assets/weischer_logo_white.svg" alt="logo">
+
+    </a>
+    Weischer.TechLab API Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Api-Gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Api Gateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bestellungen
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bestellungen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_Einf%C3%BChrung-Bestellprozess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einführung Bestellprozess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Iframe Shopintegration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iframe Shopintegration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handler-anlegen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Händler anlegen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shop-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shop Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bestellung-durchfuhren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bestellung durchführen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentifizierung-an-deinem-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentifizierung an deinem System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-fur-bestellungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback für Bestellungen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-fur-statusanderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback für Statusänderungen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Iframe-Shopintegration-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iframe Shopintegration Hybrid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_API-only-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API only Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Stammdaten
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Stammdaten
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stammdaten/0_Einf%C3%BChrung-Stammdaten/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einführung Stammdaten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handler-anlegen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Händler anlegen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shop-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shop Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bestellung-durchfuhren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bestellung durchführen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callbacks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentifizierung-an-deinem-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentifizierung an deinem System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-fur-bestellungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback für Bestellungen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-fur-statusanderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callback für Statusänderungen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Iframe Shopintegration</h1>
+
+<p>Bei der IFrame Shopintegration hast Du die Möglichkeit eine Shop-Oberfläche von uns via HTML iframe in deine Website zu integrieren.</p>
+<p>Das nachfolgende Schaubild stellt beispielhaft den Bestellprozess dar.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Benutzer
+
+    Benutzer-&gt;&gt;Dein System: Login
+    Dein System-&gt;&gt;Unser Shop: Einbindung via HTML iframe
+    Benutzer-&gt;&gt;Unser Shop: Auswahl von Werbeflächen und abschließen einer Bestellung
+    Unser Shop-&gt;&gt;Dein System: Callback Neue Bestellung
+    Unser Shop-&gt;&gt;Anbieter: Einkauf der Flächen
+    Anbieter-&gt;&gt;Unser Shop: Bestellbestätigung
+    Unser Shop-&gt;&gt;Dein System: Callback Statusänderung Bestellposition
+    Benutzer-&gt;&gt;Dein System: Motivzuweisung
+    Dein System-&gt;&gt;Unser Shop: Motivzuweisung via API
+    actor Anbieter</code></pre>
+<h2 id="handler-anlegen">Händler anlegen</h2>
+<p>Um die Shop-Oberfläche nutzen zu können, ist es erforderlich das die Händler mit den nötigen Händlerdaten bei uns im System hinterlegt sind. Das kann im Vorfeld von uns durch einen Datenimport erfolgen oder über unsere Händler API. Mit 'Händler' sind alle Benutzer oder Filialen / Endkunden gemeint, die über deine Website unsere Shop-Oberfläche nutzen wollen.</p>
+<p>Eines der wichtigsten Datenfelder des Händlers ist <code>haendlerIdClient</code>. Dieses Feld ist eine eindeutige Nummer oder ein technischer Schlüssel, welcher den Benutzer / Endkunden in deinem System eindeutig identifiziert.</p>
+<p>Um die Händler in unserem System anzulegen, kannst Du folgende APIs verwenden:</p>
+<p><a href="https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&amp;operation=ops-shop-api-v0">Händler anlegen</a></p>
+<p><a href="https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=v0&amp;operation=65e6ce5ae271b43a7fb63a5d">Händler ändern</a></p>
+<h2 id="shop-login">Shop Login</h2>
+<p>Damit Du deine Benutzer / Händler auf unsere Shop-Oberfläche weiterleiten kannst, musst Du zunächst einen Login durchführen. Um einen Login durchführen zu können, musst Du die /shoplogin API verwenden und eine <code>haendlerIdClient</code> übergeben. Sofern der Aufruf erfolgreich ist, erhältst Du eine URL zurück, welche Du in einen HTML iframe auf deiner Website integrieren kannst.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    Client-&gt;&gt;API: POST /shoplogin/
+    API-&gt;&gt;Client: 201 https://ops-jvb-test-shop.mggm.de/cgi-bin/ops.dll</code></pre>
+<p>Die zurückgegebene URL kann für einen HTML iframe verwendet werden.</p>
+<h2 id="bestellung-durchfuhren">Bestellung durchführen</h2>
+<p><img alt="Der Shop" src="../shopui.png" /></p>
+<ul>
+<li>Der Benutzer wählt über die Shop-Oberfläche freie Flächen und Termine</li>
+<li>Innerhalb der Shop-Oberfläche bestätigt der Benutzer seinen Warenkorb</li>
+<li>Durch die Bestätigung des Warenkorbs wird eine Bestellung ausgelöst und der Warenkorb geleert für die nächste Bestellung</li>
+<li>Der Benutzer bleibt in der Shop-Oberfläche, sofern er diese nicht selbstständig verlässt</li>
+</ul>
+<p><img alt="Checkout done" src="../checkout-done.png" /></p>
+<h2 id="motive">Motive</h2>
+<p>Unsere Shop-Oberfläche kann so konfiguriert werden, das deine Benutzer direkt die Motive auswählen können die Du uns zuvor bereitgestellt hast. Alternativ kannst Du uns die Motive auch zu einem späterem Zeitpunkt via <a href="https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=order-api&amp;operation=patch-bestellung">Motiv API</a> übermitteln.</p>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a0.svg" title=":warning:" /> Bitte sprich im Projekt mit uns über Fristen, die  gegenüber Anbietern und Klebern eingehalten werden müssen.</p>
+<h2 id="callbacks">Callbacks</h2>
+<p>Für bestimmte Ereignisse kann dein System von uns informiert werden. Dazu ist es erforderlich, das dein System einige REST API Endpunkte zur Verfügung stellt. Diese werden dann von unserem System aufgerufen, sobald das Ereignis eintritt. Ganz typische Ereignisse sind zum Beispiel Callbacks für neue getätigte Bestellungen oder geänderte Status an Bestellpositionen.</p>
+<h3 id="authentifizierung-an-deinem-system">Authentifizierung an deinem System</h3>
+<p>Um die Callbacks abzusichern unterstützen wir OAUTH. Bevor ein Callback ausgelöst wird, holt sich unser System von deinem System einen gültigen Token. Dazu muss dein System einen entsprechenden Endpunkt bereitstellen:</p>
+<p><code>POST {baseUrl}/callback/login</code></p>
+<p>Wir übermitteln dann die mit dir abgestimmten Zugangsdaten in folgendem Format:</p>
+<div class="highlight"><pre><span></span><code>Payload Body
+{
+   &quot;client_id&quot;: &quot;weischer&quot;,
+   &quot;client_secret&quot;: &quot;geheim&quot;,
+   &quot;grant_type&quot;: &quot;client_credentials&quot;
+}
+</code></pre></div>
+<p>Unser System erwartet als Antwort einen gültigen OAUTH Bearer Token:</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;access_token&quot;: &quot;{token}&quot;,
+}
+</code></pre></div>
+<p>Dieser Token wird für alle Callbacks verwendet.</p>
+<h3 id="callback-fur-bestellungen">Callback für Bestellungen</h3>
+<p>Abgeschlossene Bestellungen können an dein System zurück übermittelt werden. Dazu muss dein System folgenden Callback von unserem System entgegen nehmen können:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    API-&gt;&gt;Client: POST {baseUrl}/callback/bestellungen/{bestellnummer}</code></pre>
+<p>Dein System erhält die Bestellung in folgendem Format:</p>
+<div class="highlight"><pre><span></span><code>{
+&quot;flaechenbuchungen&quot;: [
+    {
+    &quot;flaechenbuchungsID&quot;: 23456,
+    &quot;flaechenbuchungsIDClient&quot;: &quot;10000009&quot;,
+    &quot;anbieterNr&quot;: 222,
+    &quot;standortNr&quot;: 365968471,
+    &quot;flNr&quot;: 1,
+    &quot;termin&quot;: 26,
+    &quot;jahr&quot;: 2025,
+    &quot;termin&quot;: 28,
+    &quot;motivID&quot;: 34567,
+    &quot;ersatzFlaeche&quot;: false,
+    &quot;tarif&quot;: 0,
+    &quot;technischeKosten&quot;: null,
+    &quot;festpreis&quot;: 0,
+    &quot;brutto&quot;: 180,
+    &quot;rabatt&quot;: 25,
+    &quot;netto1&quot;: 135,
+    &quot;buchungsstatus&quot;: 1,
+    &quot;ausfallgrund&quot;: null
+    }
+]
+</code></pre></div>
+<p>Solltest Du weitere Daten zu den einzelnen Buchungen benötigen, kannst Du unsere <a href="https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&amp;operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr">Stammdaten-API</a> verwenden. Nutze dazu die Rückgabewerte <code>anbieterNr</code>, <code>standortNr</code> und <code>flNr</code> um die uid zu bilden.</p>
+<h3 id="callback-fur-statusanderungen">Callback für Statusänderungen</h3>
+<p>Sobald sich der Bestellstatus einer Bestellpositionen ändert (z. B. Anbieter bestätigt oder storniert Flächenbuchung), kann diese Änderung an dein System zurück übermittelt werden.</p>
+<p>Dazu muss dein System folgenden Callback von unserem System entgegennehmen können:</p>
+<p><strong>Bestätigung:</strong>
+<code>PATCH {baseUrl}/callback/bestellungen/{bestellnummer}/{flaechenNummer}/confirmed</code></p>
+<p><strong>Storno:</strong>
+<code>PATCH {baseUrl}/callback/bestellungen/{bestellnummer}/{flaechenNummer}/canceled</code></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
