@@ -99,45 +99,6 @@ Unser System erwartet als Antwort einen gültigen OAUTH Bearer Token:
 
 Dieser Token wird für alle Callbacks verwendet.
 
-### Callback für Bestellungen
-
-Abgeschlossene Bestellungen können an dein System zurück übermittelt werden. Dazu muss dein System folgenden Callback von unserem System entgegen nehmen können:
-
-``` mermaid
-sequenceDiagram
-    API->>Client: POST {baseUrl}/callback/bestellungen/{bestellnummer}
-```
-
-Dein System erhält die Bestellung in folgendem Format:
-
-```
-{
-"flaechenbuchungen": [
-    {
-    "flaechenbuchungsID": 23456,
-    "flaechenbuchungsIDClient": "10000009",
-    "anbieterNr": 222,
-    "standortNr": 365968471,
-    "flNr": 1,
-    "termin": 26,
-    "jahr": 2025,
-    "termin": 28,
-    "motivID": 34567,
-    "ersatzFlaeche": false,
-    "tarif": 0,
-    "technischeKosten": null,
-    "festpreis": 0,
-    "brutto": 180,
-    "rabatt": 25,
-    "netto1": 135,
-    "buchungsstatus": 1,
-    "ausfallgrund": null
-    }
-]
-```
-
-Solltest Du weitere Daten zu den einzelnen Buchungen benötigen, kannst Du unsere [Stammdaten-API](https://apim-jvb-we-prod.developer.azure-api.net/api-details#api=weischer-stammdaten-api-v3&operation=get-api-v3-grossflaechen-search-uid-uid-geschaeftsjahr-geschaeftsjahr) verwenden. Nutze dazu die Rückgabewerte ```anbieterNr```, ```standortNr``` und ```flNr``` um die uid zu bilden.
-
 ### Callback für Statusänderungen
 
 Sobald sich der Bestellstatus einer Bestellpositionen ändert (z. B. Anbieter bestätigt oder storniert Flächenbuchung), kann diese Änderung an dein System zurück übermittelt werden.
